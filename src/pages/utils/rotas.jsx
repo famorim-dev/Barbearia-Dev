@@ -1,6 +1,7 @@
 import Home from "../home/home"
 import Login from "../login/login"
 import Registro from "../registro/registro"
+import EsqueceuSenha from "../esqueceuSenha/esqueceuSenha"
 
 const rotas = [
     {
@@ -14,6 +15,10 @@ const rotas = [
     {
         path: '/registro',
         component: () => <Registro />
+    },
+    {
+        path: '/esqueceu-senha',
+        component: () => <EsqueceuSenha />
     }
 ]
 

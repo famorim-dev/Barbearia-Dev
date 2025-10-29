@@ -29,7 +29,7 @@ function Login(){
     return(
       <>      
         <div className="bg-home flex flex-col min-h-screen w-full justify-center px-6 py-12 lg:px-8 items-center">
-            <div className='flex justify-between w-full p-11'>
+            <div className='flex justify-between w-full p-2'>
                 <Link className="flex items-center text-white hover:text-gray-600" to={"/"}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -76,7 +76,7 @@ function Login(){
                     <div className="text-sm">
                     <a
                         
-                        className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+                        className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300" href={"/esqueceu-senha"}
                     >
                         esqueceu a senha?
                     </a>
