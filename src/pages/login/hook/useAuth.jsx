@@ -5,6 +5,9 @@ export function useAuth(){
     const [error, setError] = useState(null)
 
     const login = async(email, senha) => {
+        setLoading(true)
+        setError(null)
+
         try{
             const response = await fetch('http://localhost:8080/auth/login',{
                 method: 'POST',
@@ -14,17 +17,18 @@ export function useAuth(){
                 body: JSON.stringify({email, senha})
             })
 
-            const data = await response.json()
+            const text = await response.text()
 
             if(!response.ok){
                 throw new Error(data.message || 'erro no login')
             }
 
-            localStorage.setItem('token', data.token)
+            localStorage.setItem('token', text)
 
-            return data
+            return text
         }catch(e){
             setError(e.message)
+            return null
         }finally{
             setLoading(false)
         }

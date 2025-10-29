@@ -2,6 +2,8 @@ import logo from '../../assets/logo.svg'
 
 import { useState } from 'react'
 import { useRegistro } from './hook/useRegistro'
+import { useNavigate } from 'react-router-dom'
+import ToastError from '../utils/toast/toastError'
 
 
 function Registro(){
@@ -9,17 +11,29 @@ function Registro(){
     const [senha, setSenha] = useState('')
     const [nome, setNome] = useState('')
     const {Registro, loading, erro} = useRegistro()
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = await Registro(email, senha, nome)
         if(user){
-            console.log('login', user)
+            navigate("/login")
+        }else{
+            setToastMessage('Email ou senha Invalidos')
+            setShowToast(true)
+
+            setTimeout(() => setShowToast(false), 3000)
+            }
         }
-    }
     return(
       <>      
         <div className="bg-home flex flex-col min-h-screen w-full justify-center px-6 py-12 lg:px-8 items-center">
+            <div className='flex justify-end items-end w-full'>
+                <ToastError message={toastMessage} show={showToast}/>
+            </div>
+
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img
                     alt="barber dev"

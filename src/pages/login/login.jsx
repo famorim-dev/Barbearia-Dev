@@ -2,22 +2,41 @@ import logo from '../../assets/logo.svg'
 
 import { useState } from 'react'
 import { useAuth } from './hook/useAuth'
+import { Link, useNavigate } from 'react-router-dom'
+import Toast from '../utils/toast/toastError'
 
 function Login(){
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const {login, loading, erro} = useAuth()
+    const [showToast, setShowToast] = useState(false)
+    const [toastMessage, setToastMessage] = useState('')
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const user = await login(email, senha)
         if(user){
-            console.log('login', user)
+            navigate('/')
+
+        } else {
+            setToastMessage('Email ou senha Invalidos')
+            setShowToast(true)
+
+            setTimeout(() => setShowToast(false), 3000)
+            }
         }
-    }
     return(
       <>      
         <div className="bg-home flex flex-col min-h-screen w-full justify-center px-6 py-12 lg:px-8 items-center">
+            <div className='flex justify-between w-full p-11'>
+                <Link class="flex items-center text-white hover:text-gray-600" to={"/"}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                </Link>
+                <Toast message={toastMessage} show={showToast} />
+            </div>
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
                 alt="barber dev"
@@ -56,7 +75,7 @@ function Login(){
                     </label>
                     <div className="text-sm">
                     <a
-                        href="#"
+                        
                         className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                     >
                         esqueceu a senha?
@@ -91,7 +110,7 @@ function Login(){
             <p className="mt-10 text-center text-sm/6 text-gray-500 dark:text-gray-400">
                 Não é membro?{' '}
                 <a
-                href="#"
+                href={"/registro"}
                 className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                 >
                 Crie sua conta
