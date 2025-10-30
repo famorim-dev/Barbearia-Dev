@@ -6,6 +6,8 @@ import corte3 from '../../assets/corte3.png'
 
 import '../../css/home.css'
 import '../../css/_layout.scss'
+
+
 function Home(){
 
     return(
@@ -20,6 +22,10 @@ function Home(){
 
                             <a href="https://github.com/famorim-dev">
                                 <i className="fa-brands fa-github fa-2x"></i>
+                            </a>
+                            
+                            <a href="app/admin">
+                                <i class="fa-solid fa-house-user fa-2x"></i>
                             </a>
 
                         </div>

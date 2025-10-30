@@ -1,9 +1,9 @@
-import logo from '../../assets/logo.svg'
+import logo from '../../../assets/logo.svg'
 
 import { useState } from 'react'
 import { useAuth } from './hook/useAuth'
 import { Link, useNavigate } from 'react-router-dom'
-import Toast from '../utils/toast/toastError'
+import Toast from '../../utils/toast/toastError'
 
 function Login(){
     const [email, setEmail] = useState('')

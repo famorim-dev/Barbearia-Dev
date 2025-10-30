@@ -1,9 +1,9 @@
-import logo from '../../assets/logo.svg'
+import logo from '../../../assets/logo.svg'
 
 import { useState } from 'react'
 import { useRegistro } from './hook/useRegistro'
 import { useNavigate } from 'react-router-dom'
-import ToastError from '../utils/toast/toastError'
+import ToastError from '../../../pages/utils/toast/toastError'
 
 
 function Registro(){

@@ -1,5 +1,5 @@
-import logo from '../../assets/logo.svg'
-import ToastError from '../utils/toast/toastError'
+import logo from '../../../assets/logo.svg'
+import ToastError from '../../utils/toast/toastError'
 
 import { Link } from 'react-router-dom'
 

@@ -1,7 +1,8 @@
 import Home from "../home/home"
-import Login from "../login/login"
-import Registro from "../registro/registro"
-import EsqueceuSenha from "../esqueceuSenha/esqueceuSenha"
+import Login from "../registro/login/login"
+import Registro from "../registro/registroDeusuario/registro"
+import EsqueceuSenha from "../registro/esqueceuSenha/esqueceuSenha"
+import { PainelAdmin } from "../admin/homeAdmin/painelAdmin"
 
 const rotas = [
     {
@@ -19,6 +20,10 @@ const rotas = [
     {
         path: '/esqueceu-senha',
         component: () => <EsqueceuSenha />
+    },
+    {
+        path: '/app/admin',
+        component: () => <PainelAdmin />
     }
 ]
 
