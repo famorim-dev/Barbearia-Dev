@@ -6,6 +6,7 @@ import corte3 from '../../assets/corte3.png'
 
 import '../../css/home.css'
 import '../../css/_layout.scss'
+import { Footer } from '../../components/footer/footer'
 
 
 function Home(){
@@ -25,7 +26,7 @@ function Home(){
                             </a>
                             
                             <a href="app/admin">
-                                <i class="fa-solid fa-house-user fa-2x"></i>
+                                <i className="fa-solid fa-house-user fa-2x"></i>
                             </a>
 
                         </div>
@@ -120,26 +121,8 @@ function Home(){
             <iframe 
             width="100%"
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14641.261500814106!2d-46.491057149999996!3d-23.449085949999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1729056030956!5m2!1spt-BR!2sbr" height="450" style={{ border: 0 }}  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-
-            <footer className="footer">
-                <div className="footer-icons">
-                    <a href="https://www.linkedin.com/in/felipe-amorim-04a6172a5/">
-                        <i className="fa-brands fa-linkedin fa-2x"></i>
-                    </a>
-
-                    <a href="https://github.com/famorim-dev">
-                        <i className="fa-brands fa-github fa-2x"></i>
-                    </a>
-                </div>
-
-                <div>
-                    <img 
-                    src={logo}
-                    alt="logo da barbearia"/>
-                </div>
-
-                <p>Copyright 2024 | Dev Felipe - Todos Direitos reservados.</p>
-            </footer>
+            
+            <Footer/>
         </div>
     )
 }

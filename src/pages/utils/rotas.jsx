@@ -1,6 +1,6 @@
 import Home from "../home/home"
 import Login from "../registro/login/login"
-import Registro from "../registro/registroDeusuario/registro"
+import Registro from "../registro/registroUsuario/registro"
 import EsqueceuSenha from "../registro/esqueceuSenha/esqueceuSenha"
 import { PainelAdmin } from "../admin/homeAdmin/painelAdmin"
 
