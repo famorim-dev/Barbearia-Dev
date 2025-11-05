@@ -7,9 +7,9 @@ import ToastError from '../../../pages/utils/toast/toastError'
 
 
 function Registro(){
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
-    const [nome, setNome] = useState('')
+    const [email_usuario, setEmail] = useState('')
+    const [senha_usuario, setSenha] = useState('')
+    const [nome_usuario, setNome] = useState('')
     const {Registro, loading, erro} = useRegistro()
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
@@ -17,7 +17,7 @@ function Registro(){
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const user = await Registro(email, senha, nome)
+        const user = await Registro(email_usuario, senha_usuario, nome_usuario)
         if(user){
             navigate("/login")
         }else{
@@ -58,7 +58,7 @@ function Registro(){
                             type="email"
                             required
                             autoComplete="email"
-                            value={email}
+                            value={email_usuario}
                             onChange={(e) => setEmail(e.target.value)}
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                             />
@@ -78,7 +78,7 @@ function Registro(){
                             type="password"
                             required
                             autoComplete="current-password"
-                            value={senha}
+                            value={senha_usuario}
                             onChange={(e) => setSenha(e.target.value)}
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                             />
@@ -98,7 +98,7 @@ function Registro(){
                             type="name"
                             required
                             autoComplete="current-password"
-                            value={nome}
+                            value={nome_usuario}
                             onChange={(e) => setNome(e.target.value)}
                             className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                             />

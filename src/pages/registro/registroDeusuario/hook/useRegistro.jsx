@@ -4,14 +4,14 @@ export function useRegistro(){
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
-    const Registro = async(email, senha, nome) => {
+    const Registro = async(email_usuario, senha_usuario, nome_usuario) => {
         try{
-            const response = await fetch('http://localhost:8080/auth/registro',{
+            const response = await fetch('http://localhost:3000/auth/cadastrar',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({email, senha, nome})
+                body: JSON.stringify({email_usuario, senha_usuario, nome_usuario})
             })
 
             const data = await response.json()

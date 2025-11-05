@@ -6,8 +6,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Toast from '../../utils/toast/toastError'
 
 function Login(){
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
+    const [email_usuario, setEmail] = useState('')
+    const [senha_usuario, setSenha] = useState('')
     const {login, loading, erro} = useAuth()
     const [showToast, setShowToast] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
@@ -15,7 +15,7 @@ function Login(){
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const user = await login(email, senha)
+        const user = await login(email_usuario, senha_usuario)
         if(user){
             navigate('/')
 
@@ -61,7 +61,7 @@ function Login(){
                     type="email"
                     required
                     autoComplete="email"
-                    value={email}
+                    value={email_usuario}
                     onChange={(e) => setEmail(e.target.value)}
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                     />
@@ -89,7 +89,7 @@ function Login(){
                     type="password"
                     required
                     autoComplete="current-password"
-                    value={senha}
+                    value={senha_usuario}
                     onChange={(e) => setSenha(e.target.value)}
                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                     />
