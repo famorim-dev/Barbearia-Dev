@@ -28,7 +28,7 @@ function Login(){
         }
     return(
       <>      
-        <div className="bg-home flex flex-col min-h-screen w-full justify-center px-6 py-12 lg:px-8 items-center">
+        <div className=" flex flex-col min-h-screen w-full justify-center px-6 py-12 lg:px-8 items-center">
             <div className='flex justify-between w-full p-2'>
                 <Link className="flex items-center text-white hover:text-gray-600" to={"/"}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8">

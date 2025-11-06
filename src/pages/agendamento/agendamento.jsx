@@ -1,117 +1,42 @@
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import ToastError from '../utils/toast/toastError'
-
-
 function Agendamento(){
-    const [showToast, setShowToast] = useState(false)
-    const [toastMessage, setToastMessage] = useState('')
-    const navigate = useNavigate()
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        
-        if(e){
-            
-        }else{
-            setToastMessage('')
-            setShowToast(true)
-
-            setTimeout(() => setShowToast(false), 3000)
-            }
-        }
     return(
-      <>      
-        <div className="bg-home flex flex-col min-h-screen w-full justify-center px-6 py-12 lg:px-8 items-center">
-            <div className='flex justify-end items-end w-full'>
-                <ToastError message={toastMessage} show={showToast}/>
+        <section className="bg-gray-50 dark:bg-gray-900 relative bg-center bg-no-repeat bg-cover h-screen w-full " style={{ backgroundImage: `linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url(https://img.freepik.com/fotos-gratis/homem-bonito-a-cortar-a-barba-num-barbeiro_1303-20931.jpg?semt=ais_hybrid&w=740&q=80)`, opacity: 0.9}}>
+            <div className='flex justify-between w-full p-2'>
+                <Link className="flex items-center text-white hover:text-gray-600" to={"/"}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                </Link>
+                
             </div>
-
-            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img
-                    alt="barber dev"
-                    src={logo}
-                    className="mx-auto h-13 w-auto not-dark:hidden"
-                />
-                <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900 dark:text-white">
-                    Agendar Horario
-                </h2>
-            </div>
-
-            <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                        <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900 dark:text-gray-100">
-                            Dias/Horários
-                        </label>
-                        <div className="mt-2">
-                            <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            autoComplete="email"
-                            
-                            onChange={(e) => setEmail(e.target.value)}
-                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
-                            />
+            <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <a href="/" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white p-4">
+                    <img className="w-full h-12 mr-2" src={logo} alt="logo"/>
+                    BarberDev
+                </a>
+                <div className="w-full p-6 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700 sm:p-8">
+                    <h2 className="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        Agendar Horário
+                    </h2>
+                    <form className="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="#">
+                        <div>
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dia/Horário</label>
+                            <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="." required=""/>
                         </div>
-                    </div>
-
-                    <div>
-                        <div className="flex items-center justify-between">
-                            <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900 dark:text-gray-100">
-                                Barbeiro
-                            </label>
-                        </div>
-                        <div className="mt-2">
-                            <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            required
-                            autoComplete="current-password"
-                            
-                            onChange={(e) => setSenha(e.target.value)}
-                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="flex items-center justify-between">
-                            <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900 dark:text-gray-100">
-                                Serviço
-                            </label>
-                        </div>
-                        <div className="mt-2">
-                            <input
-                            id="name"
-                            name="name"
-                            type="name"
-                            required
-                            autoComplete="current-password"
-                            
-                            onChange={(e) => setNome(e.target.value)}
-                            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
-                            />
-                        </div>
-                    </div>
-
-                    <div>
-                        <button
-                            type="submit"
-                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
-                        >
+                       <button type="Submit" className="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg className="w-3.5 h-3.5 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                            <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
+                            <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
+                            </svg>
                             Agendar
                         </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-        </>
+        </section>
     )
 }
 export default Agendamento
