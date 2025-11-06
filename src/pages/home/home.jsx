@@ -7,6 +7,7 @@ import corte3 from '../../assets/corte3.png'
 import '../../css/home.css'
 import '../../css/_layout.scss'
 import { Footer } from '../../components/footer/footer'
+import { Link } from 'react-router-dom'
 
 
 function Home(){
@@ -41,9 +42,11 @@ function Home(){
                     </div>
                     
                     <div>
-                        <button className="header-button">
-                            Agendar horário
-                        </button>
+                        <Link to={"/app/agendar"}>
+                            <button className="header-button">
+                                Agendar horário
+                            </button>
+                        </Link>
                     </div>
 
                     </nav>
@@ -51,7 +54,7 @@ function Home(){
                     <main className="hero-container" data-aos="fade-up" data-aos-delay="400">
                         <h1>ESTILO É UM REFLEXO DA SUA ATITUDE E SUA PERSONALIDADE.</h1>
                         <p>Horário de funcionamento: 09:00 ás 19:00</p>
-                        <a href="https://api.whatsapp.com/send?phone=5511000000000&text=Quero%20fazer%20um%20agendamento%20hoje!" className="button-contact" target="_blank">
+                        <a href="/app/agendar" className="button-contact">
                             Agendar horário
                         </a>
                     </main>

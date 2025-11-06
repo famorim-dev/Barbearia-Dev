@@ -38,7 +38,7 @@ export function Footer(){
                 </div>
                 <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">Felipe Amorim™</a>. Todos os Direitos Reservados.
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://www.linkedin.com/in/felipe-amorim-04a6172a5" class="hover:underline">Felipe Amorim™</a>. Todos os Direitos Reservados.
                     </span>
                     <div class="flex mt-4 sm:justify-center sm:mt-0">
                         <a href="https://www.linkedin.com/in/felipe-amorim-04a6172a5" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
