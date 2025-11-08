@@ -4,7 +4,7 @@ export function Footer(){
         <footer class="bg-white dark:bg-gray-900">
             <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div class="md:flex md:justify-between">
-                    <div class="mb-6 md:mb-0">
+                    <div class="mb-6 md:mb-0 max-[820px]:hidden">
                         <a href="/" class="flex items-center">
                             <img src={logo} class="h-8 me-3" alt="BarberDev Logo" />
                             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BarberDev</span>
@@ -40,7 +40,7 @@ export function Footer(){
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://www.linkedin.com/in/felipe-amorim-04a6172a5" class="hover:underline">Felipe Amorim™</a>. Todos os Direitos Reservados.
                     </span>
-                    <div class="flex mt-4 sm:justify-center sm:mt-0">
+                    <div class="flex mt-4 sm:justify-center sm:mt-0 max-[820px]:justify-end">
                         <a href="https://www.linkedin.com/in/felipe-amorim-04a6172a5" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11.75 20h-2.5v-9h2.5v9zm-1.25-10.268c-.8 0-1.45-.653-1.45-1.464s.65-1.464 1.45-1.464c.801 0 1.45.653 1.45 1.464s-.649 1.464-1.45 1.464zm13 10.268h-2.5v-4.5c0-1.072-.02-2.449-1.493-2.449-1.497 0-1.727 1.17-1.727 2.378v4.571h-2.5v-9h2.4v1.233h.034c.334-.633 1.152-1.298 2.372-1.298 2.537 0 3.521 1.67 3.521 4.835v4.23z"/>
