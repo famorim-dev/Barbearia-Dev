@@ -1,15 +1,16 @@
-import Home from "../home/home"
-import Login from "../registro/login/login"
-import Registro from "../registro/registroUsuario/registro"
-import EsqueceuSenha from "../registro/esqueceuSenha/esqueceuSenha"
-import { PainelAdmin } from "../admin/homeAdmin/painelAdmin"
+import Home from "../../home/home"
+import Login from "../../registro/login/login"
+import Registro from "../../registro/registroUsuario/registro"
+import EsqueceuSenha from "../../registro/esqueceuSenha/esqueceuSenha"
+import { PainelAdmin } from "../../admin/homeAdmin/painelAdmin"
 
-import { RequerAuth } from "../../middleware/requerAuth"
-import Agendamento from "../agendamento/agendamento"
+import { RequerAuth } from "../../../middleware/requerAuth"
+import Agendamento from "../../agendamento/agendamento"
+import NotFound from "../404/notFound"
 
 const rotas = [
     {
-        path: '/*',
+        path: '/',
         component: () => <Home />
     },
     {
@@ -31,6 +32,10 @@ const rotas = [
     {
         path: '/app/agendar',
         component: () => <Agendamento />
+    },
+    {
+    path: '*',
+    component: () => <NotFound />
     }
 ]
 

@@ -27,7 +27,7 @@ function Home(){
                             </a>
                             
                             <a href="app/admin">
-                                <i className="fa-solid fa-house-user fa-2x"></i>
+                                <i className="fa-solid fa-user fa-2x"></i>
                             </a>
 
                         </div>

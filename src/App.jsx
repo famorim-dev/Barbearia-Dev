@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Fragment } from 'react'
-import rotas from './pages/utils/rotas'
+import rotas from './pages/utils/rotas/rotas'
 
 function App() {
 
