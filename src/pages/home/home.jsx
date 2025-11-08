@@ -6,7 +6,7 @@ import corte3 from '../../assets/corte3.png'
 
 import '../../css/home.css'
 import '../../css/_layout.scss'
-import { Footer } from '../../components/footer/footer'
+import  Footer  from '../../components/footer/footer'
 import { Link } from 'react-router-dom'
 
 

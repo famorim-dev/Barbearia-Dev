@@ -1,7 +1,22 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
+import { useEffect, useState } from 'react'
+import {useBuscarServicoAgenda} from './hook/buscarServicoAgendamento'
 
 function Agendamento(){
+    const { buscarServico, loading, error} = useBuscarServicoAgenda()
+    const [dados, setDados] = useState([])
+    const [barbeiro, setBarbeiro] = useState('')
+
+    useEffect(() => {
+        const carregar = async () => {
+            const data = await buscarServico()
+            if(data){
+                setDados(data)
+            }
+        }
+        carregar()
+    }, [])
     return(
         <section className="bg-gray-50 dark:bg-gray-900 relative bg-center bg-no-repeat bg-cover h-screen w-full " style={{ backgroundImage: `linear-gradient(to bottom, rgba(6, 18, 30, 0.1), #06121e), url(https://img.freepik.com/fotos-gratis/homem-bonito-a-cortar-a-barba-num-barbeiro_1303-20931.jpg?semt=ais_hybrid&w=740&q=80)`, opacity: 0.9}}>
             <div className='flex justify-between w-full p-2'>
@@ -22,10 +37,10 @@ function Agendamento(){
                         Agendar Horário
                     </h2>
                     <form className="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="#">
-                        <div>
-                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Dia/Horário</label>
-                            <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="." required=""/>
-                        </div>
+                        <select onChange={(e) => setBarbeiro(e.target.value)} value={barbeiro} className="bg-gray-50 border border-gray-300 text-gray-00 text-sm rounded-md w-full p-2.5">
+                            <option value="" disabled hidden > Selecione um Barbeiro</option>
+                            {dados.map((item) => (<option key={item.id} value={item.barbeiro.id}>{item.barbeiro.nome}</option>))}
+                        </select>
                        <button type="Submit" className="px-5 py-2.5 text-sm font-medium text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                             <svg className="w-3.5 h-3.5 text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
                             <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>

@@ -17,15 +17,15 @@ export function useAuth(){
                 body: JSON.stringify({email_usuario, senha_usuario})
             })
 
-            const text = await response.text()
+            const data = await response.json()
 
             if(!response.ok){
                 throw new Error(data.message || 'erro no login')
             }
 
-            localStorage.setItem('token', text)
+            localStorage.setItem('token', data.token)
 
-            return text
+            return data.token
         }catch(e){
             setError(e.message)
             return null
